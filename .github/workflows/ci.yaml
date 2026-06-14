@@ -17,10 +17,13 @@ jobs:
         with:
           node-version: 22.16.0
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.x
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
